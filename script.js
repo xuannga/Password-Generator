@@ -57,8 +57,7 @@ function generatePassword() {
 
   //for loops through an array choosing characters until the passwordLength is met 
   for (let i = 0; i < passwordLength; i++) {
-    var userarray = Math.floor(Math.random[i] * charArray.length);
-    password = password + userarray;
+    password = Math.floor(Math.random[i] * charArray.length);
   }
   
 
