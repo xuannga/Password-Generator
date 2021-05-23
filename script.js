@@ -14,7 +14,7 @@ function generatePassword() {
   var password = "";
 
   //asks the user how long they want their password to be, and return it as an integer
-  var passwordLength = prompt("Please enter the length of your desired password, between 8-128");
+  var passwordLength = parseInt(prompt("Please enter the length of your desired password, between 8-128"));
   //validate IF the length meets min 8 characters and max 128 characters
   if (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength) || passwordLength === null) {
     alert("Your password length is invalid. Please try again.");
@@ -41,26 +41,30 @@ function generatePassword() {
  
   //pushes user's choices and possible choices to empty "charArray"
   if(wantsLow == true){
-    charArray.push(lowerCase);
+    charArray = charArray.concat(lowerCase);
   } 
   if(wantsUp == true){
-    charArray.push(upperCase);
+    charArray = charArray.concat(upperCase);
   }
   if(wantsSpecial == true) {
-    charArray.push(specialChar);
+    charArray = charArray.concat(specialChar);
   }
   if(wantsNum == true){
-    charArray.push(numeric);
+    charArray = charArray.concat(numeric);
   }
  
  console.log(charArray);
 
   //for loops through an array choosing characters until the passwordLength is met 
   for (let i = 0; i < passwordLength; i++) {
-    password = Math.floor(Math.random[i] * charArray.length);
+    var j = charArray[Math.floor(Math.random() * charArray.length)];
+    console.log("yyz: " + j);
+    password = password + j;
   }
-  
-
+  // console.log("output");
+  // console.log(passwordLength);
+  // console.log(charArray);
+  // console.log(password);
   // //returns the password string
   return password;
 }
