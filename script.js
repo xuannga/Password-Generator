@@ -42,15 +42,24 @@ function generatePassword() {
   //pushes user's choices and possible choices to empty "charArray"
   if(wantsLow == true){
     charArray = charArray.concat(lowerCase);
-  } 
+  } else {
+    alert("No lower case letters");
+  }
   if(wantsUp == true){
     charArray = charArray.concat(upperCase);
+  }else {
+    alert("No upper case letters");
+    
   }
   if(wantsSpecial == true) {
     charArray = charArray.concat(specialChar);
+  }else {
+    alert("No special characters");
   }
   if(wantsNum == true){
     charArray = charArray.concat(numeric);
+  }else {
+    alert("no numbers");
   }
  
  console.log(charArray);
